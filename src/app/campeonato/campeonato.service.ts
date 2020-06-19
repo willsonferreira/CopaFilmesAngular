@@ -15,8 +15,7 @@ export class CampeonatoService {
   buscarFilmes(): Observable<IFilme[]> {
     return this.http.get<IFilme[]>(apiUrl)
       .pipe(
-        tap(filmes=>console.log('buscou os filmes'),
-        catchError(this.handleError('buscarFilmes'))
+        tap(filmes => catchError(this.handleError('buscarFilmes'))
       ));
   }
 
@@ -31,7 +30,7 @@ export class CampeonatoService {
 
 }
 
-interface IFilme{
+export interface IFilme{
     id: string;
     titulo: string;
     nota: number;

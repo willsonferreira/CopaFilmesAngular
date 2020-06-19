@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +10,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MenuComponent } from './menu/menu.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CampeonatoComponent } from './campeonato/campeonato.component';
 import { ResultadoComponent } from './resultado/resultado.component';
@@ -28,7 +32,11 @@ import { ResultadoComponent } from './resultado/resultado.component';
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    MatTableModule,
+    MatCardModule,
+    MatGridListModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
