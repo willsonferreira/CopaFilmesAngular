@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultadoComponent implements OnInit {
 
-  constructor() { }
+  titulo: string;
+  descricao: string;
+
+  constructor() {
+    this.titulo = 'Resultado Final';
+    this.descricao = 'Veja o resultado final do campeonato de forma simples e rapida rápida.';
+
+  }
 
   ngOnInit(): void {
   }
