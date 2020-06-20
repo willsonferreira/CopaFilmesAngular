@@ -16,13 +16,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CampeonatoComponent } from './campeonato/campeonato.component';
 import { ResultadoComponent } from './resultado/resultado.component';
+import { TopoComponent } from './topo/topo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     CampeonatoComponent,
-    ResultadoComponent
+    ResultadoComponent,
+    TopoComponent
   ],
   imports: [
     BrowserModule,

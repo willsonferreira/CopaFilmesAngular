@@ -10,19 +10,26 @@ import { Router } from '@angular/router';
 export class CampeonatoComponent implements OnInit {
 
   displayedColumns: string[] = [ 'titulo', 'anoLacamento' ];
-  dataSource: IFilme[];
+  filmesDisponiveis: IFilme[];
   isLoadingResults: boolean;
-  totalFilmesSelecionados: number;
+  quantidadeDeFilmesPermitidos: number;
+  totalDeFilmesSelecionados: number;
   filmesSelecionados: IFilme[];
   filme: IFilme;
-
+  titulo: string;
+  descricao: string;
   constructor(private campeonatoService: CampeonatoService, private router: Router) { }
 
   ngOnInit(): void {
+    this.totalDeFilmesSelecionados = 0;
+    this.quantidadeDeFilmesPermitidos = 8;
     this.isLoadingResults = true;
+    this.titulo = 'Fase de seleção';
+    this.descricao = 'Selecione 8 filmes que você deseja que entrem na competição e depois pressione o botão Gerar Meu Campeonato para prosseguir.';
+
     this.campeonatoService.buscarFilmes()
-    .subscribe(res => {
-      this.dataSource = res;
+    .subscribe(resultadoApi => {
+      this.filmesDisponiveis = resultadoApi;
       this.isLoadingResults = false;
     }, err => {
       console.log(err);
@@ -30,4 +37,23 @@ export class CampeonatoComponent implements OnInit {
     });
   }
 
+  GerarCampeonato(){
+
+  }
+
+  IncluirRemoverFilme(filme: IFilme) {
+    if (this.totalDeFilmesSelecionados < this.quantidadeDeFilmesPermitidos || filme.selecionado)
+    {
+      filme.selecionado = !filme.selecionado;
+
+      if (filme.selecionado){
+        this.totalDeFilmesSelecionados++;
+      }
+      else{
+        this.totalDeFilmesSelecionados--;
+      }
+    }
+
+    console.log(filme);
+  }
 }

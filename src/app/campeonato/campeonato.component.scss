@@ -1,4 +1,23 @@
 .mat-card {
   width: 80%;
   height: 70%;
+  padding: 0;
+}
+
+.mat-card-title{
+  font-size: 1rem !important;
+}
+
+.selecionado{
+  background-color: #3f51b5;
+}
+
+.esquerda{
+  position: absolute;
+  left: 5%;
+}
+
+.direita{
+  position: absolute;
+  right: 5%;
 }

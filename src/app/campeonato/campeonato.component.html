@@ -1,16 +1,24 @@
-<div class="titulo">
-  <h1>Fase de Seleção</h1>
-  <span class="descricao">Selecione 8 filmes que você deseja que entrem na competição e depois pressione o botão Gerar Meu Campeonato para prosseguir.</span>
-</div>
-<form>
-  <mat-grid-list cols="4" rowHeight="2:1" >
-    <mat-grid-tile *ngFor="let film of dataSource">
-      <mat-card class="card">
-        <mat-card-header>
-          <mat-card-title>{{film.titulo}}</mat-card-title>
-          <mat-card-subtitle>{{film.anoLancamento}}</mat-card-subtitle>
-        </mat-card-header>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-</form>
+<app-topo [titulo]="titulo" [descricao]="descricao"></app-topo>
+<mat-grid-list cols="2" rowHeight="4rem">
+  <mat-grid-tile>
+    <div class="esquerda">
+      <div>Selecionados</div>
+      <div>{{totalDeFilmesSelecionados}} de {{quantidadeDeFilmesPermitidos}} Filmes</div>
+    </div>
+</mat-grid-tile>
+<mat-grid-tile>
+  <div class="direita">
+    <button class="botao" mat-raised-button color="primary" (click)="GerarCampeonato()" [disabled]="totalDeFilmesSelecionados != quantidadeDeFilmesPermitidos">Gerar Meu Campeonato</button>
+  </div>
+</mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list cols="4" rowHeight="3:1" >
+  <mat-grid-tile *ngFor="let filme of filmesDisponiveis">
+    <mat-card [ngClass]="{'selecionado': filme.selecionado }" (click)="IncluirRemoverFilme(filme)">
+      <mat-card-header>
+        <mat-card-title>{{filme.titulo}}</mat-card-title>
+        <mat-card-subtitle>{{filme.anoLancamento}}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
