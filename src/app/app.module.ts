@@ -9,21 +9,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './core/component/menu/menu.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CampeonatoComponent } from './campeonato/campeonato.component';
-import { ResultadoComponent } from './resultado/resultado.component';
-import { TopoComponent } from './topo/topo.component';
+import { FaseDeSelecaoComponent } from './fase-de-selecao/fase-de-selecao.component';
+import { ResultadoFinalComponent } from './resultado-final/resultado-final.component';
+import { TopoComponent } from './core/component/topo/topo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    CampeonatoComponent,
-    ResultadoComponent,
+    FaseDeSelecaoComponent,
+    ResultadoFinalComponent,
     TopoComponent
   ],
   imports: [

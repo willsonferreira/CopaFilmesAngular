@@ -1,5 +1,5 @@
-import { CampeonatoComponent } from './campeonato/campeonato.component';
-import { ResultadoComponent } from './resultado/resultado.component';
+import { FaseDeSelecaoComponent } from './fase-de-selecao/fase-de-selecao.component';
+import { ResultadoFinalComponent } from './resultado-final/resultado-final.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -8,13 +8,13 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes =
 [
   {
-    path: 'campeonato',
-    component: CampeonatoComponent,
-    data: { title: 'Campeonato' }
+    path: 'fase-de-selecao',
+    component: FaseDeSelecaoComponent,
+    data: { title: 'Fase de Seleção' }
   },
   {
-    path: 'resultado',
-    component: ResultadoComponent,
+    path: 'resultado-final',
+    component: ResultadoFinalComponent,
     data: { title: 'Resultado' }
   }
 ];
