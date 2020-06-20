@@ -1,34 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError, from } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { catchError, tap, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 import { IFilme } from '../model/ifilme';
-
-const apiUrl = 'https://willson-copa-filmes-api.herokuapp.com/filme/';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilmesService {
+  private apiUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.apiUrl = environment.urlFilmes;
+  }
 
   buscar(): Observable<IFilme[]> {
-    return this.http.get<IFilme[]>(apiUrl)
-      .pipe(
-        tap(filmes => catchError(this.handleError('buscarFilmes'))
-      ));
+    return this.http.get<IFilme[]>(this.apiUrl).pipe();
   }
-
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-
-      console.error(error);
-
-      return of(result as T);
-    };
-  }
-
 }
 
 
