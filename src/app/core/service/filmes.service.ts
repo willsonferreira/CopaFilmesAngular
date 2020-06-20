@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
+import { Observable, of, throwError, from } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
+import { IFilme } from '../model/ifilme';
 
 const apiUrl = 'https://willson-copa-filmes-api.herokuapp.com/filme/';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CampeonatoService {
+export class FilmesService {
 
   constructor(private http: HttpClient) { }
 
-  buscarFilmes(): Observable<IFilme[]> {
+  buscar(): Observable<IFilme[]> {
     return this.http.get<IFilme[]>(apiUrl)
       .pipe(
         tap(filmes => catchError(this.handleError('buscarFilmes'))
@@ -30,10 +31,4 @@ export class CampeonatoService {
 
 }
 
-export interface IFilme{
-    id: string;
-    titulo: string;
-    nota: number;
-    anoLancamento: string;
-    selecionado: boolean;
-}
+

@@ -1,13 +1,14 @@
-import { CampeonatoService, IFilme } from './campeonato.service';
+import { FilmesService } from '../core/service/filmes.service';
+import { IFilme } from '../core/model/ifilme';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-campeonato',
-  templateUrl: './campeonato.component.html',
-  styleUrls: ['./campeonato.component.scss']
+  templateUrl: './fase-de-selecao.component.html',
+  styleUrls: ['./fase-de-selecao.component.scss']
 })
-export class CampeonatoComponent implements OnInit {
+export class FaseDeSelecaoComponent implements OnInit {
 
   displayedColumns: string[] = [ 'titulo', 'anoLacamento' ];
   filmesDisponiveis: IFilme[];
@@ -18,7 +19,7 @@ export class CampeonatoComponent implements OnInit {
   filme: IFilme;
   titulo: string;
   descricao: string;
-  constructor(private campeonatoService: CampeonatoService, private router: Router) { }
+  constructor(private campeonatoService: FilmesService, private router: Router) { }
 
   ngOnInit(): void {
     this.totalDeFilmesSelecionados = 0;
@@ -27,7 +28,7 @@ export class CampeonatoComponent implements OnInit {
     this.titulo = 'Fase de seleção';
     this.descricao = 'Selecione 8 filmes que você deseja que entrem na competição e depois pressione o botão Gerar Meu Campeonato para prosseguir.';
 
-    this.campeonatoService.buscarFilmes()
+    this.campeonatoService.buscar()
     .subscribe(resultadoApi => {
       this.filmesDisponiveis = resultadoApi;
       this.isLoadingResults = false;
