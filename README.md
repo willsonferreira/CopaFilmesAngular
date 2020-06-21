@@ -1,27 +1,16 @@
 # CopaFilmesAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
+Projeto gerardo pelo [Angular CLI](https://github.com/angular/angular-cli) versão 9.1.8.
 
-## Development server
+## Executar em desenvolvimento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Antes de executar o projeto executar o comando "npm install" no diretorio do projeto.
+Para iniciar o servidor dev execute o comando `ng serve`. O site será iniciado no endereço `http://localhost:4200/`. O projeto consome os metódos da API versionado no repositório de backend e está configurado para iniciar no endereço `http://localhost:5050/`
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Executar o comando `ng build` para gerar o build. Os arqivos estaram no diretório `dist/`. O parametro `--prod` gerar o pacote para produção. As variavéis de produção estão no arquivo environment.prod.ts no diretório environments.
 
-## Running unit tests
+## Deployment
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+O processo de deployment é disparado de forma automática quando ocorre o comando push na branch master. A ferramenta utilizada na automação foi o heroku. O endereço de produção é 'https://copa-filmes-angular.herokuapp.com/'

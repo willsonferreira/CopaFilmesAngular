@@ -16,7 +16,13 @@ const routes: Routes =
     path: 'resultado-final',
     component: ResultadoFinalComponent,
     data: { title: 'Resultado' }
+  },
+  {
+      path: '',
+      pathMatch: 'full',
+      redirectTo: 'fase-de-selecao'
   }
+
 ];
 
 @NgModule({

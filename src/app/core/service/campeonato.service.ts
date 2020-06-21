@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { IFilme } from '../model/ifilme';
 import { IResultadoFinal } from '../model/iresultado-final';
 import { environment } from '../../../environments/environment';
