@@ -13,4 +13,4 @@ Executar o comando `ng build` para gerar o build. Os arquivos estarão no diret�
 
 ## Deployment
 
-O processo de deployment é disparado de forma automática quando ocorre o comando 'push' na branch 'master'. A ferramenta utilizada na automação foi a plataforma `Heroku`. O endereço de produção é `https://copa-filmes-angular.herokuapp.com/`
+O processo de deployment é disparado de forma automática quando ocorre o comando 'push' na branch 'master'. A ferramenta utilizada na automação foi a plataforma `Heroku`. O endereço de produção é https://copa-filmes-angular.herokuapp.com/
